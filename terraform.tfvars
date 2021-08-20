@@ -1,10 +1,4 @@
-devops_management = [
-  "ADFS-CloudRO/James.Hunsdon",
-  "ADFS-CloudRO/Peter.Bell",
-  "ADFS-CloudRO/Rafat.Khan",
-  "ADFS-FullAccess/Stuart.Clark",
-  "ADFS-FullAccess/VinodSai.Kumar"
-]
+devops_management = ["ADFS-FullAccess/Stuart.Clark"]
 
 dev_worker = [
   "ADFS-CloudRO/Arathy.Krishna",
@@ -12,3 +6,6 @@ dev_worker = [
   "ADFS-CloudRO/Nirmal.Baral",
   "ADFS-CloudRO/Steven.Archer"
 ]
+
+external_zone = "selfservice.global.com"
+dev_role_name = "DevAccess"

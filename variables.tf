@@ -10,10 +10,33 @@ variable "dev_worker" {
   description = "List of developers roles"
 }
 
+variable "dev_groups" {
+  type        = list(string)
+  default     = []
+  description = "List of developers role groups"
+}
+
+variable "dev_role_name" {
+  type        = string
+  default     = "Developer"
+  description = "Developer role name"
+}
+
+variable "additional_roles" {
+  type = map(object({
+    roles  = list(string)
+    arns   = list(string)
+    policy = string
+  }))
+
+  default     = {}
+  description = "Additional roles"
+}
+
 variable "external_zone" {
   type        = string
   default     = ""
-  description = "External zone"
+  description = "External zone name"
 }
 
 variable "delegation" {
@@ -22,8 +45,14 @@ variable "delegation" {
   description = "External delegation"
 }
 
-variable "production_account" {
+variable "deploy_dns" {
   type        = bool
   default     = false
-  description = "Production account"
+  description = "Deploy DNS zone"
+}
+
+variable "create_vault" {
+  type        = bool
+  default     = false
+  description = "Create Vault IAM user"
 }
