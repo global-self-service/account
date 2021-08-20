@@ -1,5 +1,5 @@
 output "external_zone_id" {
-  value       = var.external_zone != "" ? aws_route53_zone.org[0].zone_id : ""
+  value       = var.external_zone != "" && var.deploy_dns ? aws_route53_zone.org[0].zone_id : ""
   description = "External DNS zone ID"
 }
 

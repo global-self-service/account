@@ -1,5 +1,5 @@
 resource "aws_route53_record" "delegation" {
-  for_each = var.delegation
+  for_each = var.external_zone != "" && var.deploy_dns ? var.delegation : {}
 
   zone_id = aws_route53_zone.org[0].zone_id
   name    = each.key
@@ -9,7 +9,7 @@ resource "aws_route53_record" "delegation" {
 }
 
 resource "aws_route53_zone" "org" {
-  count = var.external_zone != "" ? 1 : 0
+  count = var.external_zone != "" && var.deploy_dns ? 1 : 0
 
   name = var.external_zone
 }
