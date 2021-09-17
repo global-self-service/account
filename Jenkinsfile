@@ -1,4 +1,4 @@
-setup
+setup([cron: "5 * * * *", concurrent: false])
 
 terraform([
     aws: [role: "jenkins-devops", account: "435559816706"],
