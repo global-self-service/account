@@ -1,6 +1,6 @@
 module "vault_root" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-user"
-  version = "~> 4.5.0"
+  version = "~> 4.6.0"
 
   create_user                   = var.create_vault
   name                          = "vault-root"
